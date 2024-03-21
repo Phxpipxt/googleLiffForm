@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 
 <head>
-  <title>กำลังเข้าสู่ Form</title>
-  <meta charset="UTF-8">
-  <style>
-    .centerScreen {
-      margin-top: 20;
-      margin-right: auto;
-      margin-bottom: 20;
-      margin-left: auto;
-    }
-  </style>
+    <title>กำลังเข้าสู่ Form</title>
+    <meta charset="UTF-8" />
+    <style>
+        .centerScreen {
+            margin-top: 20;
+            margin-right: auto;
+            margin-bottom: 20;
+            margin-left: auto;
+        }
+    </style>
 </head>
 
-<body style="background-color: powderblue;">
-  <div class="centerScreen">
-    <center>
-      <img src="https://drive.google.com/uc?id=1mEyShWSX9rPf4klIDeMTlHAOc4BsySFK" height="200px" , width="200px" />
-      <h1>
-        กำลังเข้าสู่ Google Form กรุณารอซักครู่
-      </h1>
-    </center>
-  </div>
-</body>
-<footer>
-  <script src="<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
-  <script>
-    /// Config Your LIFF ID Here
-    const liffId = "1657004016-jqWJnJxA";
-    /// Config Your LIFF ID Here
-    liff.ready
-      .then(() => {
-        if (liff.isLoggedIn()) {
-          return liff.getProfile();
-        } else {
-          liff.login({
-            redirectUri: "https://asbpraticipation.netlify.app/",
-          });
-        }
-      })
-      .then((profile) => {
-        window.location.replace(
-          `https://docs.google.com/forms/d/e/1FAIpQLSeoIsUORNYdMq33VWUdHK-qAIX9_qpUPhw5Sz0et_ipLTS9eg/viewform?usp=pp_url&entry.123356777=${profile.userId}&entry.1839838358=${profile.displayName}&entry.223308068=${profile.pictureUrl}`
+<body style="background-color: powderblue">
+    <div class="centerScreen">
+        <center>
+            <h1>กำลังเข้าสู่ Google Form กรุณารอซักครู่</h1>
+        </center>
+    </div>
+
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+    <script>
+        /// Config Your LIFF ID Here
+        const liffId = "1657004016-jqWJnJxA";
+        /// Config Your LIFF ID Here
+        liff.ready
+            .then(() => {
+                if (liff.isLoggedIn()) {
+                    return liff.getProfile();
+                } else {
+                    liff.login({
+                        redirectUri: "https://asbpraticipation.netlify.app/",
+                    });
+                }
+            })
+            .then((profile) => {
+                window.location.replace(
+                    `https://docs.google.com/forms/d/e/1FAIpQLSeoIsUORNYdMq33VWUdHK-qAIX9_qpUPhw5Sz0et_ipLTS9eg/viewform?usp=pp_url&entry.123356777=${profile.userId}&entry.1839838358=${profile.displayName}&entry.223308068=${profile.pictureUrl}`
+                );
+            });
+        liff.init(
+            {
+                liffId: liffId,
+            },
+            () => { },
+            (err) => {
+                window.alert(err);
+            }
         );
-      });
-    liff.init(
-      {
-        liffId: liffId,
-      },
-      () => {},
-      (err) => {
-        window.alert(err);
-      }
-    );
-  </script>
-</footer>
+    </script>
+</body>
+
+    
