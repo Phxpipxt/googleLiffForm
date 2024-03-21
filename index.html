@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+  <title>กำลังเข้าสู่ Form</title>
+  <meta charset="UTF-8">
+  <style>
+    .centerScreen {
+      margin-top: 20;
+      margin-right: auto;
+      margin-bottom: 20;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: powderblue;">
+  <div class="centerScreen">
+    <center>
+      <img src="https://docs.google.com/forms/d/e/1FAIpQLSeoIsUORNYdMq33VWUdHK-qAIX9_qpUPhw5Sz0et_ipLTS9eg/viewform?usp=sf_link" height="200px" , width="200px" />
+      <h1>
+        กำลังเข้าสู่ Google Form กรุณารอซักครู่
+      </h1>
+    </center>
+  </div>
+</body>
+<footer>
+  <script src="<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+  "></script>
+  <script>
+    /// Config Your LIFF ID Here
+    const liffId = "1657004016-jqWJnJxA";
+    /// Config Your LIFF ID Here
+    liff.ready
+      .then(() => {
+        if (liff.isLoggedIn()) {
+          return liff.getProfile();
+        } else {
+          liff.login({
+            redirectUri: "Redirect URL",
+          });
+        }
+      })
+      .then((profile) => {
+        window.location.replace(
+          `Paste Google Form URL and map your parameters here`
+        );
+      });
+    liff.init(
+      {
+        liffId: liffId,
+      },
+      () => {},
+      (err) => {
+        window.alert(err);
+      }
+    );
+  </script>
+</footer>
