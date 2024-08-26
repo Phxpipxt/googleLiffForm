@@ -112,6 +112,36 @@
 
     <!-- Script for Spinner -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/infinity.js"></script>
-
+    
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+    <script>
+        /// Config Your LIFF ID Here
+        const liffId = "1657004016-jqWJnJxA";
+
+        liff.ready
+            .then(() => {
+                if (liff.isLoggedIn()) {
+                    return liff.getProfile();
+                } else {
+                    liff.login({
+                        redirectUri: "https://asbpraticipation.netlify.app/",
+                    });
+                }
+            })
+
+            .then((profile) => {
+                window.location.replace(
+                    `https://docs.google.com/forms/d/e/1FAIpQLSeoIsUORNYdMq33VWUdHK-qAIX9_qpUPhw5Sz0et_ipLTS9eg/viewform?usp=pp_url&entry.123356777=${profile.userId}&entry.1839838358=${profile.displayName}&entry.223308068=${profile.pictureUrl}`
+                );
+            });
+        liff.init(
+            {
+                liffId: liffId, withLoginOnExternalBrowsers: true
+            },
+            () => { },
+            (err) => {
+                window.alert(err);
+            }
+        );
+    </script>
 </body>
