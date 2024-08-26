@@ -11,14 +11,11 @@
             font-family: sans-serif;
             background: whitesmoke;
             margin: 0;
-            /* Remove default body margin */
         }
 
         img {
             width: 400px;
-            /* Fixed logo size */
             height: auto;
-            /* Maintain aspect ratio */
             margin-right: 20px;
         }
 
@@ -33,38 +30,15 @@
 
         .text {
             text-align: center;
-            /* Center text */
             margin-top: 20px;
-            /* Add some margin */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .loader {
-            border: 6px solid #aaaaac;
-            border-radius: 50%;
-            border-top: 6px solid #960808;
-            width: 40px;
-            height: 40px;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Media queries for responsiveness */
         @media screen and (max-width: 600px) {
             img {
                 width: 80%;
-                /* Adjust logo size for smaller screens */
             }
         }
     </style>
@@ -78,12 +52,15 @@
             <h2>Entering Google Form, Please wait...</h2>
         </div>
         <div class="loader-container">
-            <div class="loader"></div>
+            <!-- Spinner from CDN -->
+            <l-infinity size="55" stroke="4" stroke-length="0.15" bg-opacity="0.1" speed="1.8" color="#960808"></l-infinity>
         </div>
     </div>
 
-    <!-- Script for Liff -->
+    <!-- Script for Spinner -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/infinity.js"></script>
 
+    <!-- Script for LIFF -->
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
     <script>
         /// Config Your LIFF ID Here
